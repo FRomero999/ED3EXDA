@@ -63,11 +63,14 @@ public class Ecuacion {
         } else if(discriminantedelaecuaciondesegundo==0){
 
             double b2 = Math.sqrt(discriminantedelaecuaciondesegundo);
-            double x = (-b)/(2*a);           
-            solucion1=x;
-            solucion2=x;
-            return;
-        } else if(discriminantedelaecuaciondesegundo>0){
+            
+            double x = (-b)/(2*a); 
+            
+            solucion1=x; solucion2=x; return;
+            
+        } else
+     
+        if(discriminantedelaecuaciondesegundo>0){
             double b2 = Math.sqrt(discriminantedelaecuaciondesegundo);
             double x1 = (-b + b2)/(2*a);
             double x2 = (-b - b2)/(2*a);            
