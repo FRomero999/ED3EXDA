@@ -15,12 +15,12 @@ public class Ecuacion {
 
     public void setC(double c) { this.c = c; }
 
-    public double getSolucion1() { return solucion1; }
-    public double getSolucion2() { return solucion2; }
+    public double getSolucion1() { return SOLUCION1; }
+    public double getSolucion2() { return SOLUCION2; }
     
     @Override
     public String toString() {
-        return "La ecuacion {" + "a=" + a + ", b=" + b + ", c=" + c + "}, tiene como soluciones " + solucion1 +" y "+solucion2;
+        return "La ecuacion {" + "a=" + a + ", b=" + b + ", c=" + c + "}, tiene como soluciones " + SOLUCION1 +" y "+SOLUCION2;
     }
     
     private double a;
@@ -39,8 +39,8 @@ public class Ecuacion {
         
         /* no hay ecuacion realmente */
         if(a==0.0 && b==0.0 && c==0.0){
-                solucion1=0.0;
-                solucion2=0.0;
+                SOLUCION1=0.0;
+                SOLUCION2=0.0;
                 return;
         }else{
             // si es correcto
@@ -49,16 +49,16 @@ public class Ecuacion {
         
         /* si solo hay c, no hay solucion */
         if( (a==0.0) && (b==0.0) && (c!=0.0) ){
-                solucion1 = null;
-                solucion2 = null;
+                SOLUCION1 = null;
+                SOLUCION2 = null;
                 return;           
         }
         
         /* aunque funciona creo que falta algo  aqui */
         
         if(discriminantedelaecuaciondesegundo<0){
-            solucion1 = null;
-            solucion2 = null;
+            SOLUCION1 = null;
+            SOLUCION2 = null;
             return;
         } else if(discriminantedelaecuaciondesegundo==0){
 
@@ -66,7 +66,7 @@ public class Ecuacion {
             
             double x = (-b)/(2*a); 
             
-            solucion1=x; solucion2=x; return;
+            SOLUCION1=x; SOLUCION2=x; return;
             
         } else
      
@@ -74,19 +74,19 @@ public class Ecuacion {
             double b2 = Math.sqrt(discriminantedelaecuaciondesegundo);
             double x1 = (-b + b2)/(2*a);
             double x2 = (-b - b2)/(2*a);            
-            solucion1=x1;
-            solucion2=x2;
+            SOLUCION1=x1;
+            SOLUCION2=x2;
             return;
         } else {
-            solucion1 = null;
-            solucion2 = null;
+            SOLUCION1 = null;
+            SOLUCION2 = null;
             return;
         }
         
     }
        
-    private Double solucion1;
-    private Double solucion2;
+    private Double SOLUCION1;
+    private Double SOLUCION2;
     private double discriminante;
     private int numSoluciones;
        
