@@ -6,8 +6,8 @@ public class Ecuacion {
         this.a = a; this.b = b; this.c = c;
     }
 
-    private double b;
-    private double c;   
+    public double b;
+    public double c;   
     
     public void setA(double a) { this.a = a; }
 
@@ -20,7 +20,11 @@ public class Ecuacion {
     
     @Override
     public String toString() {
-        return "La ecuacion {" + "a=" + a + ", b=" + b + ", c=" + c + "}, tiene como soluciones " + SOLUCION1 +" y "+SOLUCION2;
+        return "La ecuacion {" + "a=" + a + ", b=" + b + ", c=" + c + "}, 
+            tiene como soluciones " 
+            + SOLUCION1 
+            +" y "
+            +SOLUCION2;
     }
     
     private double a;
@@ -74,9 +78,11 @@ public class Ecuacion {
             double b2 = Math.sqrt(discriminantedelaecuaciondesegundo);
             double x1 = (-b + b2)/(2*a);
             double x2 = (-b - b2)/(2*a);            
+            b2 = Math.sqrt(discriminantedelaecuaciondesegundo);
             SOLUCION1=x1;
             SOLUCION2=x2;
             return;
+            Boolean completa=true;
         } else {
             SOLUCION1 = null;
             SOLUCION2 = null;
